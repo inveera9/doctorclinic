@@ -1,2 +1,10 @@
 <h1>Home#index</h1>
+<div>
+	 <% if doctor_signed_in? %>
+    Signed in as <%= current_doctor.email %>. Not you?
+    <%= link_to "Sign out", destroy_doctor_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_doctor_registration_path %> or <%= link_to "sign in", new_doctor_session_path %>
+  <% end %>
+</div>
 <p>Find me in app/views/home/index.html.erb</p>
