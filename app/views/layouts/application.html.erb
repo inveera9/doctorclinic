@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if !request.path.include? "admin"%>
+    <%= render 'layouts/header'%>
+  <%end%>
 <%= yield %>
-
 </body>
 </html>
